@@ -24,9 +24,13 @@ Route::withoutMiddleware([App\Http\Middleware\Authenticate::class])->group(funct
     Route::get('/rumah', [App\Http\Controllers\HomeController::class, 'rumah'])->name('rumah');
     Route::get('/menu', [App\Http\Controllers\HomeController::class, 'menu'])->name('menu');
     Route::get('/event', [App\Http\Controllers\HomeController::class, 'event'])->name('event');
+
+    Route::get('/feedback', [App\Http\Controllers\HomeController::class, 'feedback'])->name('feedback');
+    Route::post('/feedback/submit', [App\Http\Controllers\FeedbackController::class, 'feedback_submit'])->name('feedback_submit');
+
+    
 });
 
-Route::get('/feedback', [App\Http\Controllers\HomeController::class, 'feedback'])->name('feedback');
 
 
 
